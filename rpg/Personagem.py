@@ -87,12 +87,12 @@ class Mago(Personagem):
             print(f"{self.nome} lança uma Bola de Fogo em {alvo.nome}")
             alvo.receber_dano(dano)
         else:
-            print(f"{self.nome} está sem mana.")
+            print(f"{self.nome} está sem mana")
 
     def curar(self):
         cura = 20
         self.hp += cura
-        print(f"{self.nome} conjura uma magia de cura e recupera {cura} de HP.")
+        print(f"{self.nome} conjura uma magia de cura e recupera {cura} de HP")
 
 class Berserker(Personagem):
     def __init__(self, nome):

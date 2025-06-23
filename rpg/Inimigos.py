@@ -1,7 +1,7 @@
 import random
 from Personagem import Personagem
 
-# === INIMIGOS ===
+
 class Inimigo(Personagem):
     def __init__(self, nome, hp, ataque, defesa, critico=0.05, esquiva=0.05, mana=0):
         super().__init__(nome, hp, ataque, defesa, critico, esquiva, mana)
@@ -33,21 +33,21 @@ class Inimigo(Personagem):
         if self.mana >= 10:
             dano = self.ataque + 5
             self.mana -= 10
-            print(f"{self.nome} usa um ataque mágico em {alvo.nome}, causando {dano} de dano.")
+            print(f"{self.nome} usa um ataque mágico em {alvo.nome}")
             alvo.receber_dano(dano)
         else:
-            print(f"{self.nome} tentou usar um ataque mágico, mas não tinha mana suficiente.")
+            print(f"{self.nome} tentou usar um ataque mágico mas não tinha mana suficiente.")
 
     def curar(self):
         if self.mana >= 8:
             cura = 15
             self.hp += cura
             self.mana -= 8
-            print(f"{self.nome} se cura, recuperando {cura} de HP.")
+            print(f"{self.nome} se cura recuperando {cura} de HP.")
         else:
-            print(f"{self.nome} tentou se curar, mas não tinha mana suficiente.")
+            print(f"{self.nome} tentou se curar mas não tinha mana suficiente")
 
-# === TIPOS DE INIMIGOS ===
+
 class Goblin(Inimigo):
     def __init__(self):
         super().__init__(nome="Goblin", hp=30, ataque=6, defesa=2, critico=0.05, esquiva=0.1, mana=10)
